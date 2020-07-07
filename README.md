@@ -10,7 +10,7 @@ Download all the node packages you need.
 
 ### `yarn run compile-sass` or `npm run compile-sass`
 
-By runnin _yarn run compile-sass_ you will compile all the change you made in you .scss files into the styles.css
+By runnin _yarn run compile-sass_ _npm run compile-sass_ you will compile all the change you made in you .scss files into the styles.css
 
 ### `yarn start` or `npm start`
 
