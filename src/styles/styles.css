@@ -1,0 +1,107 @@
+:root {
+  font-size: 16px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  top: 0;
+}
+
+.App {
+  top: 0;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.App-header {
+  top: 0;
+  width: 100%;
+  top: 0;
+  margin: 0;
+  color: #1D1E18;
+}
+
+.App-content {
+  min-height: 100vh;
+  top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.task-container {
+  margin: 0.25rem 0;
+  max-height: 100%;
+  width: 500px;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #1D1E18;
+  color: white;
+  border-radius: 10px;
+}
+
+.task-input-form {
+  width: 176px;
+}
+
+.tasks {
+  display: flex;
+  padding: 0.5rem;
+}
+
+.task {
+  text-align: left;
+}
+
+button {
+  padding: 0.5rem;
+  border: none;
+  color: white;
+  background: #29335c;
+  border-radius: 5px;
+  outline: none;
+  margin: 5px;
+}
+
+.task-container button {
+  background: #AAD2BA;
+  color: black;
+}
+
+@media (max-width: 500px) {
+  .form-container {
+    margin: 1rem 2rem;
+  }
+
+  .task-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .task {
+    align-self: center;
+    text-align: justify;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
