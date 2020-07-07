@@ -39,6 +39,10 @@ body {
   font-size: calc(10px + 2vmin);
 }
 
+.cat-form {
+  width: 50px;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;

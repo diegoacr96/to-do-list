@@ -49,6 +49,31 @@ const Main = () => {
         event.target.task.value = "";
         setTasks(temp);
     }
+ 
+    const addFacts = (resp) => {
+        const info = resp.data;
+        let temp = [...tasks]
+        info.forEach(item => {
+            console.log(item.fact);
+            temp.push({
+                task: item.fact,
+                state: false
+            });
+        });
+        setTasks(temp);
+    }
+
+    const addCatFacts = (event) => {
+        event.preventDefault();
+        const num = event.target.cats.value;
+        if(num > 0){
+            fetch("https://catfact.ninja/facts?limit="+ num +"&max_length=140")
+            .then(response => response.json())
+            .then(response => addFacts(response))
+            .catch(err => console.log(err));
+        }
+        event.target.cats.value = "";
+    }
 
     return(
         <div>
@@ -56,6 +81,10 @@ const Main = () => {
             <form onSubmit = {(event) => addTask(event)}>
                 <input type="text" name="task" className="task-input-form" placeholder="new task" />
                 <button>+</button>
+            </form>
+            <form onSubmit = {(event) => addCatFacts(event)}>
+                <input type="textarea" className="cat-form" name="cats" placeholder="number of cats" />
+                <button>Add random Cat Facts</button>
             </form>
             <button onClick={() => setTasks([])}>Delete All</button>
         </div>
