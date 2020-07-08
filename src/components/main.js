@@ -21,8 +21,11 @@ const ToDo = ({tasks, setTasks }) => {
         return(
             <div key={idx} className="task-container">
                 <div className="tasks">
-                    <input type="checkbox" className="task-check" checked={task.state} onChange={() => toogleState(idx)}/>
-                    <label className="task">{task.task}</label> 
+                    <label className="task-check" >
+                        <input type="checkbox" checked={task.state} onChange={() => toogleState(idx)} />
+                        <span></span>
+                    </label> 
+                    <div className="task container">{task.task}</div>
                 </div>
                 <button type="button" onClick = {() => dropTask(idx)}>delete</button>
             </div>
