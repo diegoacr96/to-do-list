@@ -76,20 +76,22 @@ const Main = () => {
     }
 
     return(
-        <div>
+        <div className="App-content">
             <ToDo tasks={tasks} setTasks={setTasks} />
-            <form onSubmit = {(event) => addTask(event)}>
-                <input type="text" name="task" className="task-input-form" placeholder="new task" />
-                <button>+</button>
-            </form>
-            <form onSubmit = {(event) => addCatFacts(event)}>
-                <input type="textarea" className="cat-form" name="cats" placeholder="number of cats" />
-                <button>Add random Cat Facts</button>
-            </form>
-            <button onClick={() => setTasks([])}>Delete All</button>
+            <div className="forms">
+                <form onSubmit = {(event) => addTask(event)}>
+                    <input type="text" name="task" className="task-input-form input-form" placeholder="new task" />
+                    <button>+</button>
+                </form>
+                <form onSubmit = {(event) => addCatFacts(event)}>
+                    <input type="textarea" className="cat-form input-form" name="cats" placeholder="number of cats" />
+                    <button>Add random Cat Facts</button>
+                </form>
+                <button className="delete-all" onClick={() => setTasks([])}>Delete All</button>
+            </div>
+            
         </div>
     )
-    
 }
 
 export default Main;

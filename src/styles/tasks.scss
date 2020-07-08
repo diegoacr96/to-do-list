@@ -1,25 +1,28 @@
 .form-container{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
+    margin: 0.5rem 0;
 }
 
 .task-container{
     margin: 0.25rem 0;
+    padding: 0.5rem;
     max-height: 100%;
-    width: 500px;
-    max-width: 100%;
     display:flex;
     justify-content: space-between;
     align-items: flex-start;
-    background: #1D1E18;
-    color: white;
-    border-radius: 10px;
+    // background: black;
+    background: #e8e9eb;
+    color: black;
+    border-radius: 2px;
 }
 
 .task-input-form{
-    width: 176px;
+    width: 171px;
+    margin-right: 5px;
+}
+
+.input-form{
+    height: 2rem;
 }
 
 .tasks{
@@ -38,26 +41,49 @@ button{
     background: #29335c;
     border-radius: 5px;
     outline: none;
-    margin: 5px;
+    
 }
 
 .task-container button{
-    background: #AAD2BA;
-    color: black;
-}   
+    background: #a63a50;
+    color: white;
+}
 
-@media (max-width: 500px){
+.task-check{
+    
+}
+
+@media (min-width: 1000px){
     .form-container{
-        margin: 1rem 2rem;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 1200px;
+    }    
+}
+
+@media (max-width: 999px){
+    .form-container{
+        flex-direction: column;
+        justify-content: space-between;
     }
     .task-container{
-        display: flex;
         flex-direction: column;
         align-items: center;
     }
     
     .task{
-        align-self: center;
         text-align: justify;
+    }
+}
+
+@media (min-width: 550px){
+    .task-container{
+        width: 500px;
+    }
+}
+
+@media (max-width: 549px){
+    .task-container{
+        margin: 1rem;
     }
 }

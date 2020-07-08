@@ -4,13 +4,13 @@ import './styles/styles.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <header className="App-header">
         <h2>
           To Do List
         </h2>
       </header>
-      <Main className="App-content" />
+      <Main />
     </div>
   );
 }
