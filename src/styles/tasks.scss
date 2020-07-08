@@ -17,8 +17,8 @@
 }
 
 .task-input-form{
-    width: 171px;
-    margin-right: 5px;
+    width: 95%;
+    margin-bottom: 0.5rem;
 }
 
 .input-form{
@@ -76,7 +76,7 @@ button{
     .form-container{
         flex-wrap: wrap;
         justify-content: space-evenly;
-        align-items: center;
+        align-items: flex-start;
         width: 1200px;
     }    
 }
@@ -99,6 +99,9 @@ button{
 }
 
 @media (max-width: 549px){
+    .forms{
+        height: 15rem;
+    }
     .task-container{
         margin: 1rem;
     }

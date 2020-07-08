@@ -34,14 +34,24 @@
   margin-top: 5rem;
   padding-top: 1rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-evenly;
+  // align-items: center;
   // background: #9fa2b2;
 }
 
+@media (max-width: 900px){
+  .App-content{
+    flex-direction: column;
+  }
+}
+
+.button100{
+  align-self: center;
+  width: 95%;
+}
+
 .delete-all{
-  background: #a63a50;
-  width: 100%;
+  background: #a63a50; 
 }
 
 .forms{
@@ -50,4 +60,18 @@
   justify-content: space-evenly;
   height: 125px;
   margin-bottom: 1rem;
+}
+
+@media (min-width: 900px){
+  .App-content {
+    min-height: 20rem;
+  }
+
+  .forms{
+    justify-content: space-evenly;
+    margin-left: 5rem;
+    background: #e8e9eb;
+    width: 20rem;
+    height: 15rem;
+  }
 }

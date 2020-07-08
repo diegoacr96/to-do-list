@@ -1,4 +1,11 @@
 import React, {useState} from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useHistory
+  } from "react-router-dom";
 
 const ToDo = ({tasks, setTasks }) => {
 
@@ -41,6 +48,7 @@ const ToDo = ({tasks, setTasks }) => {
 
 const Main = () => {
     const [tasks, setTasks] = useState([]);
+    let history = useHistory();
 
     const addTask = (event) => {
         event.preventDefault(); 
@@ -80,19 +88,41 @@ const Main = () => {
 
     return(
         <div className="App-content">
+            <Router>
+                <div className="forms">
+                    <Switch>
+                        <Route exact path="/">
+                            <Link to="/addCustom">
+                                <button className="button100">Add Custom Task</button>
+                            </Link>
+                            <Link to="/addRandomCatFact">
+                                <button className="button100">Add random cat Fact</button>
+                            </Link>
+                        </Route>
+                        <Route exact path="/addCustom">
+                           
+                            <form onSubmit = {(event) => addTask(event)}>
+                                <input type="text" name="task" className="task-input-form input-form" placeholder="new task" />
+                                <button type="submit" className="button100">Add Task</button>
+                            </form>
+                            <Link to="/">
+                                <button className="button100">Back</button>
+                            </Link>
+                        </Route>
+                        <Route exact path="/addRandomCatFact">
+                            <form onSubmit = {(event) => addCatFacts(event)}>
+                                <input type="textarea" className="cat-form input-form" name="cats" placeholder="number of cats" />
+                                <button className="button100">Add random Cat Facts</button>
+                            </form>
+                            <Link to="/">
+                                <button className="button100">Back</button>
+                            </Link>
+                        </Route>
+                    </Switch>
+                    <button className="delete-all button100" onClick={() => setTasks([])}>Delete All</button>
+                </div>
+            </Router>
             <ToDo tasks={tasks} setTasks={setTasks} />
-            <div className="forms">
-                <form onSubmit = {(event) => addTask(event)}>
-                    <input type="text" name="task" className="task-input-form input-form" placeholder="new task" />
-                    <button>+</button>
-                </form>
-                <form onSubmit = {(event) => addCatFacts(event)}>
-                    <input type="textarea" className="cat-form input-form" name="cats" placeholder="number of cats" />
-                    <button>Add random Cat Facts</button>
-                </form>
-                <button className="delete-all" onClick={() => setTasks([])}>Delete All</button>
-            </div>
-            
         </div>
     )
 }

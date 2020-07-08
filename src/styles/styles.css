@@ -34,13 +34,21 @@
   margin-top: 5rem;
   padding-top: 1rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 900px) {
+  .App-content {
+    flex-direction: column;
+  }
+}
+.button100 {
+  align-self: center;
+  width: 95%;
 }
 
 .delete-all {
   background: #a63a50;
-  width: 100%;
 }
 
 .forms {
@@ -51,9 +59,22 @@
   margin-bottom: 1rem;
 }
 
+@media (min-width: 900px) {
+  .App-content {
+    min-height: 20rem;
+  }
+
+  .forms {
+    justify-content: space-evenly;
+    margin-left: 5rem;
+    background: #e8e9eb;
+    width: 20rem;
+    height: 15rem;
+  }
+}
 .cat-form {
-  width: 45px;
-  margin-right: 5px;
+  width: 95%;
+  margin-bottom: 0.5rem;
 }
 
 .form-container {
@@ -74,8 +95,8 @@
 }
 
 .task-input-form {
-  width: 171px;
-  margin-right: 5px;
+  width: 95%;
+  margin-bottom: 0.5rem;
 }
 
 .input-form {
@@ -132,7 +153,7 @@ button {
   .form-container {
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-start;
     width: 1200px;
   }
 }
@@ -153,6 +174,10 @@ button {
   }
 }
 @media (max-width: 549px) {
+  .forms {
+    height: 15rem;
+  }
+
   .task-container {
     margin: 1rem;
   }
